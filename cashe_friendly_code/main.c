@@ -62,6 +62,11 @@ int main(int argc, char** argv) {
 	int columns = atol(argv[3]);
 	int* matrix = (int*)malloc(rows * columns * sizeof(int));
 	
+	if (matrix == NULL) {
+		printf("matrix = NULL \n");
+		exit(1);		
+	}
+	
 	fill(matrix, rows, columns);
 	
 	if (strcmp(operation, "print") == 0) {
